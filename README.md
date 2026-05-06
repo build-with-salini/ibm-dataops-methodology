@@ -408,5 +408,188 @@ Deliver Trusted, Business-Ready Data
 Measure with KPIs → Review → Refine → Next Sprint
 ```
 
-DataOps is not about delivering all data. It is about delivering the **right data**, to the **right people**, at the **right time** — iteratively, measurably, and with a relentless focus on business outcomes.
+## 14. Data Quality — Why It Matters
+
+Data quality is not a technical nicety — it is a business risk. Poor quality data leads to incorrect decisions, failed regulatory audits, customer dissatisfaction, and wasted engineering effort. In a DataOps context, data quality is everyone's responsibility and must be treated as an ongoing operational discipline, not a one-time cleansing project.
+
+A useful way to think about data quality is: **fit for purpose**. Data does not need to be perfect in every dimension — it needs to meet the quality bar required for the specific business use case it supports. A customer phone number used for marketing may tolerate a 5% error rate. The same field used to send legally required notifications cannot.
+
+---
+
+## 15. Common Data Quality Dimensions
+
+Data quality is multi-dimensional. A dataset can be accurate but incomplete, or complete but inconsistent. The five most commonly referenced dimensions are:
+
+| Dimension | Definition | Example of failure |
+|-----------|------------|-------------------|
+| **Accuracy** | Data correctly reflects the real-world entity or event it represents | A customer's date of birth is recorded as 1920 instead of 1990 |
+| **Completeness** | All required data is present — no mandatory fields are null or missing | 30% of customer records are missing an email address |
+| **Consistency** | The same data element has the same value across different systems or representations | A product price is £10 in the CRM but £12 in the billing system |
+| **Integrity** | Relationships between data entities are valid and referential integrity is maintained | An order record references a customer ID that does not exist in the customer table |
+| **Uniqueness** | Each real-world entity is represented only once — no duplicates | The same customer appears three times under slightly different name spellings |
+
+> **Why five is not enough:** These five dimensions are a good starting point but are not exhaustive. Gartner's framework (see Section 16) extends this significantly to cover dimensions that are harder to measure but equally important in practice.
+
+---
+
+## 16. Gartner Data Quality Dimensions
+
+Gartner's data quality model divides dimensions into two categories: **Objective** (measurable by automated rules) and **Subjective** (assessed by human judgement). Both matter in practice.
+
+### Objective Dimensions
+
+These can be measured programmatically against known rules or reference values.
+
+| Dimension | What it means |
+|-----------|--------------|
+| **Accessibility** | Data can be found and retrieved by those who need it, within an acceptable time frame |
+| **Accuracy** | Data correctly reflects the real-world fact it represents |
+| **Consistency** | Data values do not conflict across systems or time periods |
+| **Completeness** | All required attributes are populated |
+| **Existence** | The data asset itself exists and is available — it has not been deleted, corrupted, or lost |
+| **Integrity** | Relationships between records are valid (referential integrity, no orphaned records) |
+| **Precision** | Data is recorded at the right level of granularity — not too coarse, not unnecessarily fine |
+| **Reliability** | Data can be depended upon to be consistently available and accurate over time |
+| **Timeliness** | Data is available when it is needed and reflects the current state of the real world |
+| **Uniqueness** | No duplicate representations of the same real-world entity exist |
+| **Validity** | Data conforms to defined formats, ranges, and business rules (e.g., a date field contains a valid date) |
+
+### Subjective Dimensions
+
+These require human interpretation and cannot be fully automated — they depend on context, domain knowledge, and stakeholder judgement.
+
+| Dimension | What it means |
+|-----------|--------------|
+| **Accessibility** | Data is easy to find and access from the perspective of the consumer (overlaps with objective, but includes UX and discoverability) |
+| **Believability** | Data consumers trust and believe the data — often influenced by source reputation and past quality |
+| **Clarity** | Data and its metadata are expressed in language that is unambiguous to the intended audience |
+| **Interpretability** | The data can be correctly understood and used by its consumers — labels, units, and context are sufficient |
+| **Objectivity** | Data is collected and presented without bias — the process that produced it does not systematically favour one outcome |
+| **Usability** | Data is in a form that makes it practical to use for its intended purpose without excessive transformation |
+
+> **Key insight:** Subjective dimensions are often the reason that technically "clean" data is still not trusted or used by the business. A dataset can score highly on all objective dimensions and still fail on believability or interpretability if the data team has not invested in communication, metadata, and stakeholder engagement.
+
+---
+
+## 17. The Data Quality Framework
+
+IBM's Data Quality Framework provides a structured, repeatable four-stage process for managing data quality. It is cyclic — Monitor feeds back into Define for continuous improvement.
+
+```
+Define → Assess → Remediate → Monitor → (back to Define)
+```
+
+The framework applies to every Critical Data Element (CDE) and every data sprint. It prevents quality management from being reactive (only fixing things when a problem is reported) and instead makes it proactive and measurable.
+
+---
+
+## 18. Stage 1 — Define Data Quality
+
+The Define stage establishes **what good looks like** before any measurement begins. Without this, "assess" is meaningless because there is no standard to measure against.
+
+### Key Activities
+
+**Review CDEs**
+Start with the Critical Data Elements identified for the current data task or sprint. Quality rules are defined per CDE, not generically across all data. Different CDEs will have different quality requirements based on their business use — a field used in regulatory reporting has a zero-tolerance threshold for errors; a field used for internal dashboards may tolerate more.
+
+**Define data quality dimensions to measure for CDEs**
+Not every dimension applies to every CDE. For each CDE, select the relevant dimensions from the common or Gartner lists (Sections 15–16). For example, a date-of-birth field will need: accuracy, completeness, validity (is it a real date?), and timeliness (is it current?). A transaction amount field may additionally need precision and consistency across systems.
+
+**Define acceptable thresholds and agree with the business**
+This is a collaborative, not a technical, step. The data team proposes a threshold (e.g., "95% completeness for customer email address") and negotiates with the business stakeholder who owns that CDE. The agreed threshold becomes the quality target for the sprint KPI. Without this agreement, disputes arise later about whether quality is "good enough."
+
+**Review and associate metadata with critical data elements**
+Metadata enriches the CDE with context: who owns it, where it comes from, what it means, what governance policy applies. This metadata is essential for quality assessment (you need to know the source to understand why quality might be poor) and for enabling self-service by downstream consumers.
+
+---
+
+## 19. Stage 2 — Assess Data Quality
+
+The Assess stage measures the **actual quality of data** against the thresholds defined in Stage 1. It produces a clear, evidence-based picture of where quality problems exist and what their likely impact is.
+
+### Key Activities
+
+**Conduct data profiling**
+Data profiling is the systematic examination of a data source to understand its structure, content, and statistics. Profiling reveals: null rates per field, value distributions, min/max/average values, pattern analysis (e.g., are phone numbers in the expected format?), uniqueness counts, and referential integrity checks. Profiling is typically run by a Data Quality Analyst using automated tooling (e.g., IBM Watson Knowledge Catalog, Informatica, or open-source tools like Great Expectations). It gives the team an objective, data-driven baseline — removing guesswork about where problems lie.
+
+**Design and implement Data Quality Rules**
+Quality rules are the programmatic expressions of the thresholds agreed in Stage 1. For example: "field `customer_email` must not be null AND must match regex `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`". Rules are typically implemented in the data platform or quality tool, run against the data, and produce pass/fail counts per record. Well-designed rules are reusable — once written for a CDE, they can be applied across every system that contains that element.
+
+**Review and analyse profiling results**
+Raw profiling output is translated into actionable intelligence. The quality team examines: which rules are failing and at what rate, whether failures are concentrated in specific sources or time periods, whether the failures are systematic (a process bug) or random (data entry errors), and what the trend is over time (getting better or worse?).
+
+**Identify critical data quality exceptions and develop recommendations**
+Not all quality failures have the same business impact. The team prioritises exceptions by their effect on the business use case (a missing field in a regulatory report is more critical than a missing field in an internal dashboard). For each critical exception, a recommendation is produced: fix at source, cleanse at ingestion, apply a transformation rule, or accept and document the limitation.
+
+---
+
+## 20. Stage 3 — Remediate Data Quality
+
+Remediation is about **fixing quality problems** — but critically, it distinguishes between fixing the symptom (the bad data) and fixing the cause (the process that produced it). DataOps emphasises root-cause remediation over repetitive cleansing.
+
+### Key Activities
+
+**Resolve data quality exceptions**
+Exceptions identified in the Assess stage are worked through systematically. Some can be resolved automatically (e.g., a transformation rule that standardises date formats). Others require manual review by a Data Steward or SME (e.g., deciding which of two conflicting customer addresses is correct). Each resolved exception is logged with its resolution method, creating an audit trail.
+
+**Data cleansing techniques and data validation**
+Data cleansing is the process of correcting or removing inaccurate, incomplete, or improperly formatted data. Common techniques include: standardisation (reformatting values to a consistent pattern), deduplication (merging or removing duplicate records), enrichment (filling missing values from a reference source), and parsing (breaking a combined field into structured components, e.g., splitting a full name into first and last). Data validation confirms that after cleansing, the data now meets the defined quality rules.
+
+**Share results with stakeholders (data source and data application owners) so they can work to eliminate the root cause**
+This is the most important and most often skipped step. Simply cleansing data at the pipeline level means the same bad data will arrive again next time. Sharing quality reports with the owners of the source system — and working with them to fix the upstream process, UI validation, or ETL logic that is generating poor quality data — is the only path to sustainable quality improvement. DataOps treats this as a collaborative loop, not a blame exercise.
+
+---
+
+## 21. Stage 4 — Monitor Data Quality
+
+Monitoring ensures that **quality improvements are sustained** and that new problems are detected quickly. Without monitoring, quality degrades silently between assessments.
+
+### Key Activities
+
+**Perform profiling on a regular basis to compare profile results**
+Profiling is not a one-time activity — it should be scheduled to run on each data refresh cycle. Comparing current profile results against historical baselines reveals quality drift: fields that were 98% complete last month and are now 85% complete indicate a problem in an upstream process. Trend analysis also demonstrates improvement over time, which is valuable for reporting to sponsors.
+
+**Monitor data quality by using business rules**
+Beyond statistical profiling, business rules encode domain-specific expectations. For example: "no customer should have a future date of birth", "every transaction must have a corresponding order record", "the sum of line-item amounts must equal the invoice total." These rules run continuously against live or near-live data and trigger alerts when violations are detected — enabling near-real-time quality assurance rather than batch-cycle discovery.
+
+**Data Quality Dashboard**
+A quality dashboard aggregates quality scores, exception counts, trend lines, and rule pass rates into a single view accessible to the DataOps team, data stewards, and business stakeholders. It answers "are we done?" (are we above the agreed threshold?) and "are we getting better?" (is the trend improving?). Dashboards also create accountability — when quality scores are visible to senior stakeholders, teams are more motivated to address root causes rather than deferring them.
+
+**Share Data Quality Scores in catalog with data consumers**
+Publishing quality scores in the data catalog — alongside the data asset itself — is a fundamental enabler of self-service analytics. When a data consumer opens a catalog entry and can see "completeness: 97%, accuracy: 99%, last profiled: 2 hours ago," they can make an informed decision about whether that data is fit for their purpose. This eliminates the "trust but verify" cycle where every consumer independently assesses quality before use, which wastes enormous time across the organisation.
+
+---
+
+## Summary: The Data Quality Lifecycle
+
+```
+DEFINE
+  ├── Which CDEs need quality management?
+  ├── Which dimensions apply to each CDE?
+  ├── What are the agreed thresholds?
+  └── What metadata enriches each CDE?
+         ↓
+ASSESS
+  ├── Profile the data (automated)
+  ├── Implement and run quality rules
+  ├── Analyse failures by impact
+  └── Prioritise exceptions
+         ↓
+REMEDIATE
+  ├── Resolve exceptions (auto + manual)
+  ├── Cleanse and validate data
+  └── Feed root causes back to source owners
+         ↓
+MONITOR
+  ├── Schedule recurring profiling
+  ├── Run business rules continuously
+  ├── Surface scores on dashboard
+  └── Publish quality scores to catalog
+         ↓
+      (back to DEFINE — refine thresholds, add new CDEs)
+```
+
+### The Objective vs. Subjective Quality Balance
+
+A mature DataOps team manages both objective and subjective quality. Automated tools handle objective dimensions at scale. Subjective dimensions — believability, interpretability, clarity — require ongoing investment in documentation, stakeholder communication, and metadata curation. Teams that ignore subjective quality often find that their data, despite being technically clean, is not actually used by the business because people do not trust or understand it.
 
