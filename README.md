@@ -218,7 +218,7 @@ Four tabs, all driven live from SQLite:
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/your-username/dataops-economics-pipeline.git
+git clone https://github.com/build-with-salini/ibm-dataops-methodology.git
 cd dataops-economics-pipeline
 pip install -r requirements.txt
 
