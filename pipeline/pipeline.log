@@ -1,0 +1,178 @@
+2026-06-14 18:35:23,991 [PIPELINE] INFO  Pipeline started at 2026-06-14T10:35:23.991647+00:00
+2026-06-14 18:35:23,991 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:23,992 [PIPELINE] INFO  STAGE: INGEST
+2026-06-14 18:35:23,992 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:24,308 [PIPELINE] INFO  NumExpr defaulting to 8 threads.
+2026-06-14 18:35:24,461 [PIPELINE] INFO  Starting ingestion: 19 countries × 5 indicators (2000–2023)
+2026-06-14 18:35:24,461 [PIPELINE] INFO  [1/19] Argentina — gdp_per_capita
+2026-06-14 18:35:24,777 [PIPELINE] INFO  [1/19] Argentina — inflation
+2026-06-14 18:35:24,978 [PIPELINE] INFO  [1/19] Argentina — unemployment
+2026-06-14 18:35:25,304 [PIPELINE] INFO  [1/19] Argentina — current_account_pct
+2026-06-14 18:35:25,477 [PIPELINE] INFO  [1/19] Argentina — govt_debt_pct
+2026-06-14 18:35:25,776 [PIPELINE] INFO  [2/19] Australia — gdp_per_capita
+2026-06-14 18:35:26,058 [PIPELINE] INFO  [2/19] Australia — inflation
+2026-06-14 18:35:26,252 [PIPELINE] INFO  [2/19] Australia — unemployment
+2026-06-14 18:35:26,402 [PIPELINE] INFO  [2/19] Australia — current_account_pct
+2026-06-14 18:35:26,520 [PIPELINE] INFO  [2/19] Australia — govt_debt_pct
+2026-06-14 18:35:26,805 [PIPELINE] INFO  [3/19] Brazil — gdp_per_capita
+2026-06-14 18:35:26,997 [PIPELINE] INFO  [3/19] Brazil — inflation
+2026-06-14 18:35:27,296 [PIPELINE] INFO  [3/19] Brazil — unemployment
+2026-06-14 18:35:27,423 [PIPELINE] INFO  [3/19] Brazil — current_account_pct
+2026-06-14 18:35:27,627 [PIPELINE] INFO  [3/19] Brazil — govt_debt_pct
+2026-06-14 18:35:27,886 [PIPELINE] INFO  [4/19] Canada — gdp_per_capita
+2026-06-14 18:35:28,060 [PIPELINE] INFO  [4/19] Canada — inflation
+2026-06-14 18:35:28,266 [PIPELINE] INFO  [4/19] Canada — unemployment
+2026-06-14 18:35:28,422 [PIPELINE] INFO  [4/19] Canada — current_account_pct
+2026-06-14 18:35:28,558 [PIPELINE] INFO  [4/19] Canada — govt_debt_pct
+2026-06-14 18:35:28,674 [PIPELINE] INFO  [5/19] China — gdp_per_capita
+2026-06-14 18:35:28,863 [PIPELINE] INFO  [5/19] China — inflation
+2026-06-14 18:35:29,025 [PIPELINE] INFO  [5/19] China — unemployment
+2026-06-14 18:35:29,211 [PIPELINE] INFO  [5/19] China — current_account_pct
+2026-06-14 18:35:29,466 [PIPELINE] INFO  [5/19] China — govt_debt_pct
+2026-06-14 18:35:29,676 [PIPELINE] INFO  [6/19] France — gdp_per_capita
+2026-06-14 18:35:29,922 [PIPELINE] INFO  [6/19] France — inflation
+2026-06-14 18:35:30,153 [PIPELINE] INFO  [6/19] France — unemployment
+2026-06-14 18:35:30,365 [PIPELINE] INFO  [6/19] France — current_account_pct
+2026-06-14 18:35:30,482 [PIPELINE] INFO  [6/19] France — govt_debt_pct
+2026-06-14 18:35:30,641 [PIPELINE] INFO  [7/19] Germany — gdp_per_capita
+2026-06-14 18:35:30,887 [PIPELINE] INFO  [7/19] Germany — inflation
+2026-06-14 18:35:31,030 [PIPELINE] INFO  [7/19] Germany — unemployment
+2026-06-14 18:35:31,162 [PIPELINE] INFO  [7/19] Germany — current_account_pct
+2026-06-14 18:35:31,278 [PIPELINE] INFO  [7/19] Germany — govt_debt_pct
+2026-06-14 18:35:31,497 [PIPELINE] INFO  [8/19] India — gdp_per_capita
+2026-06-14 18:35:31,646 [PIPELINE] INFO  [8/19] India — inflation
+2026-06-14 18:35:31,795 [PIPELINE] INFO  [8/19] India — unemployment
+2026-06-14 18:35:32,007 [PIPELINE] INFO  [8/19] India — current_account_pct
+2026-06-14 18:35:32,206 [PIPELINE] INFO  [8/19] India — govt_debt_pct
+2026-06-14 18:35:32,461 [PIPELINE] INFO  [9/19] Indonesia — gdp_per_capita
+2026-06-14 18:35:32,614 [PIPELINE] INFO  [9/19] Indonesia — inflation
+2026-06-14 18:35:32,732 [PIPELINE] INFO  [9/19] Indonesia — unemployment
+2026-06-14 18:35:32,986 [PIPELINE] INFO  [9/19] Indonesia — current_account_pct
+2026-06-14 18:35:33,343 [PIPELINE] INFO  [9/19] Indonesia — govt_debt_pct
+2026-06-14 18:35:33,860 [PIPELINE] INFO  [10/19] Italy — gdp_per_capita
+2026-06-14 18:35:34,035 [PIPELINE] INFO  [10/19] Italy — inflation
+2026-06-14 18:35:34,252 [PIPELINE] INFO  [10/19] Italy — unemployment
+2026-06-14 18:35:34,395 [PIPELINE] INFO  [10/19] Italy — current_account_pct
+2026-06-14 18:35:34,747 [PIPELINE] INFO  [10/19] Italy — govt_debt_pct
+2026-06-14 18:35:34,893 [PIPELINE] INFO  [11/19] Japan — gdp_per_capita
+2026-06-14 18:35:35,174 [PIPELINE] INFO  [11/19] Japan — inflation
+2026-06-14 18:35:35,331 [PIPELINE] INFO  [11/19] Japan — unemployment
+2026-06-14 18:35:35,606 [PIPELINE] INFO  [11/19] Japan — current_account_pct
+2026-06-14 18:35:35,856 [PIPELINE] INFO  [11/19] Japan — govt_debt_pct
+2026-06-14 18:35:35,992 [PIPELINE] INFO  [12/19] Mexico — gdp_per_capita
+2026-06-14 18:35:36,237 [PIPELINE] INFO  [12/19] Mexico — inflation
+2026-06-14 18:35:36,358 [PIPELINE] INFO  [12/19] Mexico — unemployment
+2026-06-14 18:35:36,495 [PIPELINE] INFO  [12/19] Mexico — current_account_pct
+2026-06-14 18:35:36,656 [PIPELINE] INFO  [12/19] Mexico — govt_debt_pct
+2026-06-14 18:35:36,793 [PIPELINE] INFO  [13/19] Russia — gdp_per_capita
+2026-06-14 18:35:36,916 [PIPELINE] INFO  [13/19] Russia — inflation
+2026-06-14 18:35:37,068 [PIPELINE] INFO  [13/19] Russia — unemployment
+2026-06-14 18:35:37,281 [PIPELINE] INFO  [13/19] Russia — current_account_pct
+2026-06-14 18:35:37,405 [PIPELINE] INFO  [13/19] Russia — govt_debt_pct
+2026-06-14 18:35:37,523 [PIPELINE] INFO  [14/19] Saudi Arabia — gdp_per_capita
+2026-06-14 18:35:37,701 [PIPELINE] INFO  [14/19] Saudi Arabia — inflation
+2026-06-14 18:35:37,874 [PIPELINE] INFO  [14/19] Saudi Arabia — unemployment
+2026-06-14 18:35:37,997 [PIPELINE] INFO  [14/19] Saudi Arabia — current_account_pct
+2026-06-14 18:35:38,110 [PIPELINE] INFO  [14/19] Saudi Arabia — govt_debt_pct
+2026-06-14 18:35:38,360 [PIPELINE] INFO  [15/19] South Africa — gdp_per_capita
+2026-06-14 18:35:38,502 [PIPELINE] INFO  [15/19] South Africa — inflation
+2026-06-14 18:35:38,622 [PIPELINE] INFO  [15/19] South Africa — unemployment
+2026-06-14 18:35:38,859 [PIPELINE] INFO  [15/19] South Africa — current_account_pct
+2026-06-14 18:35:39,278 [PIPELINE] INFO  [15/19] South Africa — govt_debt_pct
+2026-06-14 18:35:39,486 [PIPELINE] INFO  [16/19] South Korea — gdp_per_capita
+2026-06-14 18:35:39,611 [PIPELINE] INFO  [16/19] South Korea — inflation
+2026-06-14 18:35:39,883 [PIPELINE] INFO  [16/19] South Korea — unemployment
+2026-06-14 18:35:40,080 [PIPELINE] INFO  [16/19] South Korea — current_account_pct
+2026-06-14 18:35:40,205 [PIPELINE] INFO  [16/19] South Korea — govt_debt_pct
+2026-06-14 18:35:40,489 [PIPELINE] INFO  [17/19] Turkey — gdp_per_capita
+2026-06-14 18:35:40,610 [PIPELINE] INFO  [17/19] Turkey — inflation
+2026-06-14 18:35:40,751 [PIPELINE] INFO  [17/19] Turkey — unemployment
+2026-06-14 18:35:40,961 [PIPELINE] INFO  [17/19] Turkey — current_account_pct
+2026-06-14 18:35:41,426 [PIPELINE] INFO  [17/19] Turkey — govt_debt_pct
+2026-06-14 18:35:41,556 [PIPELINE] INFO  [18/19] United Kingdom — gdp_per_capita
+2026-06-14 18:35:41,692 [PIPELINE] INFO  [18/19] United Kingdom — inflation
+2026-06-14 18:35:41,977 [PIPELINE] INFO  [18/19] United Kingdom — unemployment
+2026-06-14 18:35:42,112 [PIPELINE] INFO  [18/19] United Kingdom — current_account_pct
+2026-06-14 18:35:42,230 [PIPELINE] INFO  [18/19] United Kingdom — govt_debt_pct
+2026-06-14 18:35:42,523 [PIPELINE] INFO  [19/19] United States — gdp_per_capita
+2026-06-14 18:35:42,667 [PIPELINE] INFO  [19/19] United States — inflation
+2026-06-14 18:35:42,799 [PIPELINE] INFO  [19/19] United States — unemployment
+2026-06-14 18:35:43,039 [PIPELINE] INFO  [19/19] United States — current_account_pct
+2026-06-14 18:35:43,232 [PIPELINE] INFO  [19/19] United States — govt_debt_pct
+2026-06-14 18:35:43,496 [PIPELINE] INFO  Ingestion complete. 2280 rows written to raw_indicators.
+2026-06-14 18:35:43,496 [PIPELINE] INFO  Ingested 2280 rows.
+2026-06-14 18:35:43,497 [PIPELINE] INFO  STAGE INGEST completed in 19.5s
+2026-06-14 18:35:43,497 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:43,497 [PIPELINE] INFO  STAGE: ASSESS
+2026-06-14 18:35:43,497 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:43,504 [PIPELINE] INFO  Starting data quality assessment for 5 CDEs
+2026-06-14 18:35:43,504 [PIPELINE] INFO  Assessing CDE: gdp_per_capita
+2026-06-14 18:35:43,538 [PIPELINE] INFO    gdp_per_capita             overall=100.0%  rules=60 passed / 0 failed  status=PASS
+2026-06-14 18:35:43,538 [PIPELINE] INFO  Assessing CDE: inflation
+2026-06-14 18:35:43,564 [PIPELINE] INFO    inflation                  overall=97.5%  rules=52 passed / 8 failed  status=WARN
+2026-06-14 18:35:43,564 [PIPELINE] INFO  Assessing CDE: unemployment
+2026-06-14 18:35:43,588 [PIPELINE] INFO    unemployment               overall=100.0%  rules=60 passed / 0 failed  status=PASS
+2026-06-14 18:35:43,588 [PIPELINE] INFO  Assessing CDE: current_account_pct
+2026-06-14 18:35:43,613 [PIPELINE] INFO    current_account_pct        overall=98.6%  rules=47 passed / 13 failed  status=WARN
+2026-06-14 18:35:43,613 [PIPELINE] INFO  Assessing CDE: govt_debt_pct
+2026-06-14 18:35:43,634 [PIPELINE] INFO    govt_debt_pct              overall=74.3%  rules=32 passed / 14 failed  status=WARN
+2026-06-14 18:35:43,634 [PIPELINE] INFO  Assessment complete.
+2026-06-14 18:35:43,634 [PIPELINE] INFO    gdp_per_capita               100.0%  [PASS]
+2026-06-14 18:35:43,634 [PIPELINE] INFO    inflation                    97.5%  [WARN]
+2026-06-14 18:35:43,634 [PIPELINE] INFO    unemployment                 100.0%  [PASS]
+2026-06-14 18:35:43,634 [PIPELINE] INFO    current_account_pct          98.6%  [WARN]
+2026-06-14 18:35:43,634 [PIPELINE] INFO    govt_debt_pct                74.3%  [WARN]
+2026-06-14 18:35:43,634 [PIPELINE] INFO  STAGE ASSESS completed in 0.1s
+2026-06-14 18:35:43,634 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:43,634 [PIPELINE] INFO  STAGE: REMEDIATE
+2026-06-14 18:35:43,634 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:43,637 [PIPELINE] INFO  Starting remediation for 5 CDEs
+2026-06-14 18:35:43,637 [PIPELINE] INFO  Remediating: gdp_per_capita
+2026-06-14 18:35:43,643 [PIPELINE] INFO    Written 456 rows to refined_indicators
+2026-06-14 18:35:43,643 [PIPELINE] INFO  Remediating: inflation
+2026-06-14 18:35:43,645 [PIPELINE] INFO    [inflation] Nulled 1 out-of-range values
+2026-06-14 18:35:43,648 [PIPELINE] INFO    [inflation] Interpolated 3 missing values
+2026-06-14 18:35:43,650 [PIPELINE] INFO    Written 456 rows to refined_indicators
+2026-06-14 18:35:43,650 [PIPELINE] INFO  Remediating: unemployment
+2026-06-14 18:35:43,656 [PIPELINE] INFO    Written 456 rows to refined_indicators
+2026-06-14 18:35:43,656 [PIPELINE] INFO  Remediating: current_account_pct
+2026-06-14 18:35:43,667 [PIPELINE] INFO    Written 456 rows to refined_indicators
+2026-06-14 18:35:43,667 [PIPELINE] INFO  Remediating: govt_debt_pct
+2026-06-14 18:35:43,681 [PIPELINE] INFO    [govt_debt_pct] Interpolated 27 missing values
+2026-06-14 18:35:43,684 [PIPELINE] INFO    Written 456 rows to refined_indicators
+2026-06-14 18:35:43,684 [PIPELINE] INFO  Remediation complete. Total refined rows: 2280
+2026-06-14 18:35:43,684 [PIPELINE] INFO  STAGE REMEDIATE completed in 0.0s
+2026-06-14 18:35:43,684 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:43,684 [PIPELINE] INFO  STAGE: TRANSFORM
+2026-06-14 18:35:43,684 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:43,686 [PIPELINE] INFO  Loading refined data and computing economic health scores...
+2026-06-14 18:35:43,698 [PIPELINE] INFO  Transformation complete. 361 country-year rows written.
+2026-06-14 18:35:43,700 [PIPELINE] INFO  Top 5 by health score in 2023:
+country_name  year  health_score health_tier
+Saudi Arabia  2023         86.65      Strong
+       Japan  2023         81.52      Strong
+ South Korea  2023         80.73      Strong
+   Australia  2023         79.47      Strong
+      Canada  2023         79.43      Strong
+2026-06-14 18:35:43,700 [PIPELINE] INFO  STAGE TRANSFORM completed in 0.0s
+2026-06-14 18:35:43,700 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:43,700 [PIPELINE] INFO  STAGE: CATALOG
+2026-06-14 18:35:43,700 [PIPELINE] INFO  ============================================================
+2026-06-14 18:35:43,717 [PIPELINE] INFO  Building data catalog...
+2026-06-14 18:35:43,729 [PIPELINE] INFO  Catalog exported to catalog/data_catalog.yml
+2026-06-14 18:35:43,729 [PIPELINE] INFO  Catalog built with 5 asset entries.
+2026-06-14 18:35:43,729 [PIPELINE] INFO    GDP Per Capita (USD)            quality=100.0%  status=PASS
+2026-06-14 18:35:43,729 [PIPELINE] INFO    Inflation Rate (Annual %)       quality=97.5%  status=WARN
+2026-06-14 18:35:43,729 [PIPELINE] INFO    Unemployment Rate (%)           quality=100.0%  status=PASS
+2026-06-14 18:35:43,729 [PIPELINE] INFO    Current Account Balance (% of GDP)  quality=98.6%  status=WARN
+2026-06-14 18:35:43,729 [PIPELINE] INFO    Government Debt (% of GDP)      quality=74.3%  status=WARN
+2026-06-14 18:35:43,729 [PIPELINE] INFO  STAGE CATALOG completed in 0.0s
+2026-06-14 18:35:43,729 [PIPELINE] INFO  
+2026-06-14 18:35:43,729 [PIPELINE] INFO  Pipeline finished successfully.
+2026-06-14 18:35:43,729 [PIPELINE] INFO  Stage timings:
+2026-06-14 18:35:43,729 [PIPELINE] INFO    ingest        19.5s
+2026-06-14 18:35:43,729 [PIPELINE] INFO    assess        0.1s
+2026-06-14 18:35:43,729 [PIPELINE] INFO    remediate     0.0s
+2026-06-14 18:35:43,729 [PIPELINE] INFO    transform     0.0s
+2026-06-14 18:35:43,729 [PIPELINE] INFO    catalog       0.0s
+2026-06-14 18:35:43,729 [PIPELINE] INFO  Total: 19.7s

@@ -1,0 +1,149 @@
+# ─────────────────────────────────────────────────────────────────
+# Critical Data Elements (CDE) Definitions
+# DataOps Economics Pipeline
+# ─────────────────────────────────────────────────────────────────
+# Each CDE entry follows IBM DataOps metadata standards:
+#   business_name   : human-readable label understood by all stakeholders
+#   source_field    : technical field name in the raw layer
+#   indicator_code  : World Bank API indicator code
+#   domain          : data domain this CDE belongs to
+#   owner           : accountable data steward role
+#   description     : plain-language definition
+#   quality_dims    : quality dimensions monitored for this CDE
+#   thresholds      : agreed quality pass/fail thresholds
+#   privacy_class   : sensitivity classification
+#   lineage         : source → raw → refined → business_ready
+# ─────────────────────────────────────────────────────────────────
+
+cdes:
+
+  gdp_per_capita:
+    business_name: "GDP Per Capita (USD)"
+    source_field: "gdp_per_capita"
+    indicator_code: "NY.GDP.PCAP.CD"
+    domain: "Macroeconomic Output"
+    owner: "Data Steward – Economics Domain"
+    description: >
+      Gross Domestic Product divided by midyear population, expressed in
+      current US dollars. Measures the average economic output per person
+      and is the primary indicator of a country's standard of living and
+      economic productivity.
+    quality_dims:
+      - accuracy
+      - completeness
+      - timeliness
+      - validity
+    thresholds:
+      completeness_min: 0.80
+      value_range: [100, 200000]
+    privacy_class: "Public"
+    critical: true
+    lineage:
+      source: "World Bank WDI API (NY.GDP.PCAP.CD)"
+      raw: "raw_indicators.value WHERE indicator='gdp_per_capita'"
+      refined: "refined_indicators WHERE indicator='gdp_per_capita'"
+      business_ready: "economic_health_scores"
+
+  inflation:
+    business_name: "Inflation Rate (Annual %)"
+    source_field: "inflation"
+    indicator_code: "FP.CPI.TOTL.ZG"
+    domain: "Monetary Stability"
+    owner: "Data Steward – Economics Domain"
+    description: >
+      Annual percentage change in the Consumer Price Index (CPI). Measures
+      the rate at which the general level of prices for goods and services
+      rises. High or volatile inflation signals monetary instability.
+    quality_dims:
+      - accuracy
+      - completeness
+      - timeliness
+      - consistency
+    thresholds:
+      completeness_min: 0.75
+      value_range: [-10, 100]
+    privacy_class: "Public"
+    critical: true
+    lineage:
+      source: "World Bank WDI API (FP.CPI.TOTL.ZG)"
+      raw: "raw_indicators.value WHERE indicator='inflation'"
+      refined: "refined_indicators WHERE indicator='inflation'"
+      business_ready: "economic_health_scores"
+
+  unemployment:
+    business_name: "Unemployment Rate (%)"
+    source_field: "unemployment"
+    indicator_code: "SL.UEM.TOTL.ZS"
+    domain: "Labour Market"
+    owner: "Data Steward – Economics Domain"
+    description: >
+      Share of the labour force that is without work but available for
+      and seeking employment, expressed as a percentage of the total labour
+      force (ILO modelled estimates). A key indicator of economic health
+      and social welfare.
+    quality_dims:
+      - accuracy
+      - completeness
+      - timeliness
+      - uniqueness
+    thresholds:
+      completeness_min: 0.75
+      value_range: [0, 50]
+    privacy_class: "Public"
+    critical: true
+    lineage:
+      source: "World Bank WDI API (SL.UEM.TOTL.ZS)"
+      raw: "raw_indicators.value WHERE indicator='unemployment'"
+      refined: "refined_indicators WHERE indicator='unemployment'"
+      business_ready: "economic_health_scores"
+
+  current_account_pct:
+    business_name: "Current Account Balance (% of GDP)"
+    source_field: "current_account_pct"
+    indicator_code: "BN.CAB.XOKA.GD.ZS"
+    domain: "External Balance"
+    owner: "Data Steward – Economics Domain"
+    description: >
+      The sum of net exports of goods, services, net primary income, and
+      net secondary income, expressed as a percentage of GDP. A positive
+      value means the country is a net lender to the rest of the world;
+      negative means a net borrower.
+    quality_dims:
+      - accuracy
+      - completeness
+      - validity
+    thresholds:
+      completeness_min: 0.70
+      value_range: [-30, 30]
+    privacy_class: "Public"
+    critical: false
+    lineage:
+      source: "World Bank WDI API (BN.CAB.XOKA.GD.ZS)"
+      raw: "raw_indicators.value WHERE indicator='current_account_pct'"
+      refined: "refined_indicators WHERE indicator='current_account_pct'"
+      business_ready: "economic_health_scores"
+
+  govt_debt_pct:
+    business_name: "Government Debt (% of GDP)"
+    source_field: "govt_debt_pct"
+    indicator_code: "GC.DOD.TOTL.GD.ZS"
+    domain: "Fiscal Position"
+    owner: "Data Steward – Economics Domain"
+    description: >
+      Central government debt as a percentage of GDP. Includes domestic
+      and foreign liabilities such as currency and deposits, securities
+      other than shares, and loans. Indicates fiscal sustainability.
+    quality_dims:
+      - accuracy
+      - completeness
+      - validity
+    thresholds:
+      completeness_min: 0.65
+      value_range: [0, 300]
+    privacy_class: "Public"
+    critical: false
+    lineage:
+      source: "World Bank WDI API (GC.DOD.TOTL.GD.ZS)"
+      raw: "raw_indicators.value WHERE indicator='govt_debt_pct'"
+      refined: "refined_indicators WHERE indicator='govt_debt_pct'"
+      business_ready: "economic_health_scores"

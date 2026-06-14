@@ -1,0 +1,170 @@
+catalog:
+- asset_id: econ_pipeline.gdp_per_capita
+  business_name: GDP Per Capita (USD)
+  technical_name: gdp_per_capita
+  indicator_code: NY.GDP.PCAP.CD
+  domain: Macroeconomic Output
+  description: Gross Domestic Product divided by midyear population, expressed in
+    current US dollars. Measures the average economic output per person and is the
+    primary indicator of a country's standard of living and economic productivity.
+  owner: Data Steward – Economics Domain
+  privacy_class: Public
+  critical_cde: true
+  quality_dims:
+  - accuracy
+  - completeness
+  - timeliness
+  - validity
+  completeness_threshold_pct: 80
+  value_range:
+  - 100
+  - 200000
+  quality_score_pct: 100.0
+  quality_status: PASS
+  rules_passed: 60
+  rules_failed: 0
+  total_exceptions: 0
+  last_assessed: '2026-06-14T10:35:43.504291+00:00'
+  latest_year: 2023
+  total_rows: 456
+  non_null_rows: 456
+  lineage_source: World Bank WDI API (NY.GDP.PCAP.CD)
+  lineage_raw: raw_indicators.value WHERE indicator='gdp_per_capita'
+  lineage_refined: refined_indicators WHERE indicator='gdp_per_capita'
+  lineage_business: economic_health_scores
+  catalog_built_at: '2026-06-14T10:35:43.723737+00:00'
+- asset_id: econ_pipeline.inflation
+  business_name: Inflation Rate (Annual %)
+  technical_name: inflation
+  indicator_code: FP.CPI.TOTL.ZG
+  domain: Monetary Stability
+  description: Annual percentage change in the Consumer Price Index (CPI). Measures
+    the rate at which the general level of prices for goods and services rises. High
+    or volatile inflation signals monetary instability.
+  owner: Data Steward – Economics Domain
+  privacy_class: Public
+  critical_cde: true
+  quality_dims:
+  - accuracy
+  - completeness
+  - timeliness
+  - consistency
+  completeness_threshold_pct: 75
+  value_range:
+  - -10
+  - 100
+  quality_score_pct: 97.5
+  quality_status: WARN
+  rules_passed: 52
+  rules_failed: 8
+  total_exceptions: 50
+  last_assessed: '2026-06-14T10:35:43.504291+00:00'
+  latest_year: 2023
+  total_rows: 456
+  non_null_rows: 440
+  lineage_source: World Bank WDI API (FP.CPI.TOTL.ZG)
+  lineage_raw: raw_indicators.value WHERE indicator='inflation'
+  lineage_refined: refined_indicators WHERE indicator='inflation'
+  lineage_business: economic_health_scores
+  catalog_built_at: '2026-06-14T10:35:43.723737+00:00'
+- asset_id: econ_pipeline.unemployment
+  business_name: Unemployment Rate (%)
+  technical_name: unemployment
+  indicator_code: SL.UEM.TOTL.ZS
+  domain: Labour Market
+  description: Share of the labour force that is without work but available for and
+    seeking employment, expressed as a percentage of the total labour force (ILO modelled
+    estimates). A key indicator of economic health and social welfare.
+  owner: Data Steward – Economics Domain
+  privacy_class: Public
+  critical_cde: true
+  quality_dims:
+  - accuracy
+  - completeness
+  - timeliness
+  - uniqueness
+  completeness_threshold_pct: 75
+  value_range:
+  - 0
+  - 50
+  quality_score_pct: 100.0
+  quality_status: PASS
+  rules_passed: 60
+  rules_failed: 0
+  total_exceptions: 0
+  last_assessed: '2026-06-14T10:35:43.504291+00:00'
+  latest_year: 2023
+  total_rows: 456
+  non_null_rows: 456
+  lineage_source: World Bank WDI API (SL.UEM.TOTL.ZS)
+  lineage_raw: raw_indicators.value WHERE indicator='unemployment'
+  lineage_refined: refined_indicators WHERE indicator='unemployment'
+  lineage_business: economic_health_scores
+  catalog_built_at: '2026-06-14T10:35:43.723737+00:00'
+- asset_id: econ_pipeline.current_account_pct
+  business_name: Current Account Balance (% of GDP)
+  technical_name: current_account_pct
+  indicator_code: BN.CAB.XOKA.GD.ZS
+  domain: External Balance
+  description: The sum of net exports of goods, services, net primary income, and
+    net secondary income, expressed as a percentage of GDP. A positive value means
+    the country is a net lender to the rest of the world; negative means a net borrower.
+  owner: Data Steward – Economics Domain
+  privacy_class: Public
+  critical_cde: false
+  quality_dims:
+  - accuracy
+  - completeness
+  - validity
+  completeness_threshold_pct: 70
+  value_range:
+  - -30
+  - 30
+  quality_score_pct: 98.6
+  quality_status: WARN
+  rules_passed: 47
+  rules_failed: 13
+  total_exceptions: 19
+  last_assessed: '2026-06-14T10:35:43.504291+00:00'
+  latest_year: 2023
+  total_rows: 456
+  non_null_rows: 456
+  lineage_source: World Bank WDI API (BN.CAB.XOKA.GD.ZS)
+  lineage_raw: raw_indicators.value WHERE indicator='current_account_pct'
+  lineage_refined: refined_indicators WHERE indicator='current_account_pct'
+  lineage_business: economic_health_scores
+  catalog_built_at: '2026-06-14T10:35:43.723737+00:00'
+- asset_id: econ_pipeline.govt_debt_pct
+  business_name: Government Debt (% of GDP)
+  technical_name: govt_debt_pct
+  indicator_code: GC.DOD.TOTL.GD.ZS
+  domain: Fiscal Position
+  description: Central government debt as a percentage of GDP. Includes domestic and
+    foreign liabilities such as currency and deposits, securities other than shares,
+    and loans. Indicates fiscal sustainability.
+  owner: Data Steward – Economics Domain
+  privacy_class: Public
+  critical_cde: false
+  quality_dims:
+  - accuracy
+  - completeness
+  - validity
+  completeness_threshold_pct: 65
+  value_range:
+  - 0
+  - 300
+  quality_score_pct: 74.3
+  quality_status: WARN
+  rules_passed: 32
+  rules_failed: 14
+  total_exceptions: 526
+  last_assessed: '2026-06-14T10:35:43.504291+00:00'
+  latest_year: 2023
+  total_rows: 456
+  non_null_rows: 225
+  lineage_source: World Bank WDI API (GC.DOD.TOTL.GD.ZS)
+  lineage_raw: raw_indicators.value WHERE indicator='govt_debt_pct'
+  lineage_refined: refined_indicators WHERE indicator='govt_debt_pct'
+  lineage_business: economic_health_scores
+  catalog_built_at: '2026-06-14T10:35:43.723737+00:00'
+generated_at: '2026-06-14T10:35:43.726222+00:00'
