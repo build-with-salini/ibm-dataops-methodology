@@ -12,9 +12,9 @@
 
 The DataOps Economics Pipeline completed its first successful end-to-end run, ingesting **2,280 rows** of macroeconomic data across **19 countries and 5 Critical Data Elements (CDEs)**, processing them through a three-tier Raw → Refined → Business-Ready architecture, and producing **361 business-ready records** ready for downstream economic analysis.
 
-The headline insight: while labour-market and output data are near-perfect, **government debt coverage is a structural blind spot** — six major economies (China, Germany, France, Italy, Japan, Saudi Arabia) report zero completeness for this indicator, pulling the CDE quality score to 74.3% and placing it just below the 75% acceptance threshold.
+The headline insight: while labour-market and output data are near-perfect, **government debt coverage is a structural blind spot**, six major economies (China, Germany, France, Italy, Japan, Saudi Arabia) report zero completeness for this indicator, pulling the CDE quality score to 74.3% and placing it just below the 75% acceptance threshold.
 
-Despite this friction point, four of five CDEs pass the quality bar. The pipeline's governance framework — operating on a **Define → Assess → Remediate → Monitor** lifecycle — has already surfaced the exact cells that need remediation, giving the team a precise roadmap rather than vague data-quality anxiety.
+Despite this friction point, four of five CDEs pass the quality bar. The pipeline's governance framework operating on a **Define → Assess → Remediate → Monitor** lifecycle has already surfaced the exact cells that need remediation, giving the team a precise roadmap rather than vague data-quality anxiety.
 
 > **Key Takeaway:** The pipeline is structurally sound and analytically ready. One targeted data-sourcing effort for government debt will lift overall quality from four-of-five to a perfect five-of-five CDE pass rate.
 
@@ -31,7 +31,7 @@ The specific gaps that motivated this project:
 - **No CDE governance** — the five macroeconomic indicators had no formal ownership, definitions, or automated scoring.
 - **No monitoring** — quality checks, where they existed, were manual and infrequent.
 
-The project set out to build a **production-grade DataOps pipeline** that would transform raw World Bank / IMF source data into a governed, quality-scored, analysis-ready layer — and make that quality state visible and actionable in real time.
+The project set out to build a **production-grade DataOps pipeline** that would transform raw World Bank / IMF source data into a governed, quality-scored, analysis-ready layer and make that quality state visible and actionable in real time.
 
 ---
 
@@ -44,14 +44,14 @@ The project set out to build a **production-grade DataOps pipeline** that would 
 The pipeline implements a medallion-style layered architecture chosen for its clear separation of concerns and its ability to support independent quality gates at each tier:
 
 - **Raw Layer (2,280 rows):** Faithful reproduction of source data. No transformations; ingest-only. Protects audit trail and allows reprocessing.
-- **Refined Layer (2,280 rows):** Structural normalisation — type casting, ISO country codes, canonical indicator names, null standardisation. Row count held: no records are discarded here, only enriched.
+- **Refined Layer (2,280 rows):** Structural normalisation such as type casting, ISO country codes, canonical indicator names, null standardisation. Row count held: no records are discarded here, only enriched.
 - **Business-Ready Layer (361 rows):** Filtered, aggregated, and scored records suitable for analytic consumption. The row reduction from 2,280 to 361 reflects the subset of country-year-indicator combinations that meet minimum completeness criteria for meaningful economic analysis.
 
 ### 3.2 Geographic Coverage
 
 ![Data Coverage by Country](./images/02_coverage_by_country.png)
 
-Data coverage reveals a clear gradient from developed to emerging economies. The US, Russia, and UK achieve near-100% completeness, while Argentina trails at ~65% — a well-known pattern in international macroeconomic databases driven by reporting format heterogeneity.
+Data coverage reveals a clear gradient from developed to emerging economies. The US, Russia, and UK achieve near-100% completeness, while Argentina trails at ~65% is a well-known pattern in international macroeconomic databases driven by reporting format heterogeneity.
 
 ### 3.3 CDE Governance Framework
 
@@ -67,7 +67,7 @@ Five Critical Data Elements were formally defined, each with a domain owner, bus
 
 ### 3.4 Quality Assessment Lifecycle
 
-The framework enforces a four-phase governance lifecycle — **Define → Assess → Remediate → Monitor**. Each pipeline run triggers an automated assessment that scores every CDE against a ruleset (completeness, range validity, cross-country consistency). Results are persisted to a quality-results store and surfaced in the dashboard in near-real time. The current pass threshold is set at **75%**, calibrated to be achievable at launch while still meaningful enough to drive action.
+The framework enforces a four-phase governance lifecycle namely **Define → Assess → Remediate → Monitor**. Each pipeline run triggers an automated assessment that scores every CDE against a ruleset (completeness, range validity, cross-country consistency). Results are persisted to a quality-results store and surfaced in the dashboard in near-real time. The current pass threshold is set at **75%**, calibrated to be achievable at launch while still meaningful enough to drive action.
 
 ---
 
@@ -79,7 +79,7 @@ The framework enforces a four-phase governance lifecycle — **Define → Assess
 
 The most significant data-quality issue uncovered was **structural zero-coverage of government debt data** for six G20 economies: China (CN), Germany (DE), France (FR), Italy (IT), Japan (JP), and Saudi Arabia (SA).
 
-This is not noise — it is a **sourcing gap**. These countries do publish government debt statistics, but through reporting formats or timing conventions that diverge from the primary source feed used in this pipeline run. The pipeline correctly identified the gap rather than silently imputing values, which is the intended behaviour.
+This is not noise but it is a **sourcing gap**. These countries do publish government debt statistics, but through reporting formats or timing conventions that diverge from the primary source feed used in this pipeline run. The pipeline correctly identified the gap rather than silently imputing values, which is the intended behaviour.
 
 > **Impact:** Government Debt (% GDP) scored 74.3%, just below the 75% threshold — the sole CDE to miss the bar.
 
@@ -163,7 +163,7 @@ The DataOps Economics Pipeline's first production run is not just a technical mi
 
 With one targeted sourcing sprint to close the government debt gap, the pipeline will achieve a full five-of-five CDE pass rate and deliver the first **fully governed, analytically certified G20 macroeconomic dataset** available to the team.
 
-> The architecture is right. The governance model is right. The pipeline is production-ready. **Close the government debt gap — and the story is complete.**
+> The architecture is right. The governance model is right. The pipeline is production-ready. **Close the government debt gap and the story is complete.**
 
 ---
 
